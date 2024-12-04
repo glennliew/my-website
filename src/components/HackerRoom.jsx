@@ -5,6 +5,7 @@ Files: hacker-room-new.glb [34.62MB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc
 */
 
 import { useGLTF, useTexture } from '@react-three/drei';
+import React from 'react';
 
 export function HackerRoom(props) {
   const { nodes, materials } = useGLTF('/models/hacker-room.glb');

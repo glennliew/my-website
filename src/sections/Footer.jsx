@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Footer = () => {
   const handleIconClick = (url) => {
     window.open(url, '_blank');
