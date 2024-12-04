@@ -1,4 +1,5 @@
 import { clientReviews } from '../constants/index.js';
+import React from 'react';
 
 const Clients = () => {
   return (
