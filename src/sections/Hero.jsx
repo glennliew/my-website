@@ -23,23 +23,54 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
+    <section id="home" className="min-h-screen w-full flex flex-col relative overflow-hidden" >
+      {/* Top content with greeting and tagline */}
+      <div className="w-full mx-auto flex flex-col sm:mt-24 mt-16 c-space gap-3 relative z-10">
+        <p 
+          className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans"
+          data-aos="fade-down"
+          data-aos-delay="100"
+        >
           Hi, I'm Glenn! <span className="waving-hand"> 🙋🏻‍♂️</span>
         </p>
-        <p className="hero_tag text-gray_gradient">Learning and Building Everyday</p>
+        <p 
+          className="hero_tag text-gray_gradient"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Learning and Building Everyday
+        </p>
       </div>
 
-      <div className="w-full h-full absolute inset-0">
-        <Canvas className="w-full h-full">
+      {/* 3D Scene Container */}
+      <div 
+        className="w-full absolute inset-0 h-[90vh] sm:h-screen"
+        data-aos="fade-in"
+        data-aos-delay="300"
+      >
+        <Canvas 
+          className="w-full h-full"
+          camera={{ position: [0, 0, 30], fov: isMobile ? 60 : 25 }}
+          gl={{ antialias: true, alpha: true }}
+          dpr={[1, 2]}
+        >
           <Suspense fallback={<CanvasLoader />}>
             {/* To hide controller */}
             <Leva hidden />
-            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+            <PerspectiveCamera 
+              makeDefault 
+              position={[0, 0, 35]} 
+              fov={isMobile ? 60 : 35}
+              near={0.1}
+              far={1000}
+            />
 
             <HeroCamera isMobile={isMobile}>
-              <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
+              <HackerRoom 
+                scale={sizes.deskScale} 
+                position={sizes.deskPosition} 
+                rotation={[0.1, -Math.PI, 0]} 
+              />
             </HeroCamera>
 
             <group>
@@ -49,13 +80,18 @@ const Hero = () => {
               <Cube position={sizes.cubePosition} />
             </group>
 
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+            <ambientLight intensity={1.2} />
+            <directionalLight position={[10, 10, 10]} intensity={0.7} />
           </Suspense>
         </Canvas>
       </div>
 
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+      {/* Bottom action button */}
+      <div 
+        className="absolute bottom-7 left-0 right-0 w-full z-10 c-space"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
         <a href="#about" className="w-fit">
           <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
         </a>

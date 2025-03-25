@@ -31,16 +31,25 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section className="c-space my-20">
-      <p className="head-text">My works</p>
+    <section id="projects" className="c-space my-20">
+      <p className="head-text" data-aos="fade-up" data-aos-duration="800">My works</p>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
+        <div 
+          className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <div className="absolute top-0 right-0" data-aos="fade-down" data-aos-delay="200">
             <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
           </div>
 
-          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
+          <div 
+            className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" 
+            style={currentProject.logoStyle}
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
             <img className="w-12 h-15 shadow-sm" src={currentProject.logo} alt="logo" />
           </div>
 
@@ -51,10 +60,19 @@ const Projects = () => {
             <p className="animatedText">{currentProject.subdesc}</p>
           </div>
 
-          <div className="flex items-center justify-between flex-wrap gap-5">
+          <div 
+            className="flex items-center justify-between flex-wrap gap-5"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
+                <div 
+                  key={index} 
+                  className="tech-logo"
+                  data-aos="zoom-in"
+                  data-aos-delay={500 + (index * 100)}
+                >
                   <img src={tag.path} alt={tag.name} />
                 </div>
               ))}
@@ -64,13 +82,20 @@ const Projects = () => {
               className="flex items-center gap-2 cursor-pointer text-white-600"
               href={currentProject.href}
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
               <p>Check It Out</p>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
             </a>
           </div>
 
-          <div className="flex justify-between items-center mt-7">
+          <div 
+            className="flex justify-between items-center mt-7"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
               <img src="/assets/left-arrow.png" alt="left arrow" />
             </button>
@@ -81,7 +106,12 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div 
+          className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

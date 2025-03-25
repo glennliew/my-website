@@ -12,15 +12,16 @@ const Target = (props) => {
 
   useGSAP(() => {
     gsap.to(targetRef.current.position, {
-      y: targetRef.current.position.y + 0.5,
-      duration: 1.5,
+      y: targetRef.current.position.y + 0.75,
+      duration: 2,
       repeat: -1,
       yoyo: true,
+      ease: "power1.inOut"
     });
   });
 
   return (
-    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 5, 0]} scale={1.5}>
+    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 5, 0]} scale={2}>
       <primitive object={scene} />
     </mesh>
   );
