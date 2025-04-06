@@ -8,6 +8,7 @@ import Contact from "./sections/Contact.jsx";
 import Projects from "./sections/Projects.jsx";
 import WorkExperience from "./sections/Experience.jsx";
 import PhotoBooth from "./sections/PhotoBooth.jsx";
+import MarketDashboard from "./sections/MarketDashboard.jsx";
 import MatrixRain from "./components/MatrixRain.jsx";
 
 const HomePage = () => {
@@ -53,6 +54,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/photobooth" element={<PhotoBooth />} />
+          <Route path="/market-dashboard" element={<MarketDashboard />} />
         </Routes>
       </main>
     </Router>

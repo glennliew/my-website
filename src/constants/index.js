@@ -29,6 +29,11 @@ export const navLinks = [
     name: 'Photo Booth',
     href: '/photobooth',
   },
+  {
+    id: 7,
+    name: 'Market Dashboard',
+    href: '/market-dashboard',
+  },
 ];
 
 export const clientReviews = [
