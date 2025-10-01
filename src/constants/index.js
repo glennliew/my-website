@@ -34,6 +34,11 @@ export const navLinks = [
     name: 'Market Dashboard',
     href: '/market-dashboard',
   },
+  {
+    id: 8,
+    name: 'AI Advisor',
+    href: '/ai-advisor',
+  },
 ];
 
 export const clientReviews = [
