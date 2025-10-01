@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Hero from "./sections/Hero.jsx";
@@ -8,6 +9,8 @@ import Contact from "./sections/Contact.jsx";
 import Projects from "./sections/Projects.jsx";
 import WorkExperience from "./sections/Experience.jsx";
 import PhotoBooth from "./sections/PhotoBooth.jsx";
+import MarketDashboard from "./sections/MarketDashboard.jsx";
+import AIAdvisor from "./sections/AIAdvisor.jsx";
 import MatrixRain from "./components/MatrixRain.jsx";
 
 const HomePage = () => {
@@ -53,6 +56,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/photobooth" element={<PhotoBooth />} />
+          <Route path="/market-dashboard" element={<MarketDashboard />} />
+          <Route path="/ai-advisor" element={<AIAdvisor />} />
         </Routes>
       </main>
     </Router>

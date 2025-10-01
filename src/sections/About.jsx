@@ -181,7 +181,6 @@ const About = () => {
               <div className="mt-auto">
                 <p className="grid-headtext">I'm based in Singapore!</p>
                 <p className="grid-subtext mb-4">I&apos;m based in Singapore and open to work/ internships in Singapore.</p>
-                <Button name="Contact Me" isBeam containerClass="w-full mt-4" />
               </div>
             </div>
           </InteractivePanel>
