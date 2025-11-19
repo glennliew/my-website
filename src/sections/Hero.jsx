@@ -13,6 +13,7 @@ import CanvasLoader from '../components/Loading.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
 import { calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
+import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 const Hero = () => {
   // Use media queries to determine screen size
@@ -74,7 +75,9 @@ const Hero = () => {
             </HeroCamera>
 
             <group>
-              <Target position={sizes.targetPosition} />
+              <ErrorBoundary>
+                <Target position={sizes.targetPosition} />
+              </ErrorBoundary>
               <ReactLogo position={sizes.reactLogoPosition} />
               <Rings position={sizes.ringPosition} />
               <Cube position={sizes.cubePosition} />
